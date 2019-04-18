@@ -18,7 +18,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $message = '';
 
     if (count($resultado) > 0 && password_verify($_POST['password'], $resultado['password'])) {
-        $_SESSION['user_id'] = $results['id'];
+        $_SESSION['user_id'] = $resultado['id'];
         header("Location: /proyecto practica");
     } else {
         $message = 'Datos incorrectos o inexistentes, intentalo nuevamente';
